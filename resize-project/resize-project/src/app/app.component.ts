@@ -1,4 +1,4 @@
-import {  Component } from '@angular/core';
+import {  Directive, ElementRef, OnInit, Renderer, Component, ViewChildren, AfterViewInit} from '@angular/core';
 import { ResizedEvent } from 'angular-resize-event';
 
 @Component({
@@ -7,13 +7,22 @@ import { ResizedEvent } from 'angular-resize-event';
   styleUrls: ['./app.component.scss']
 })
 
-export class AppComponent  {
+export class AppComponent {
 
 
+  private el: any;
+  private renderer: Renderer;
+  private prevHeight: number;
+  private sameCount: number;
+
+  @ViewChildren("iframeAutoHeight") myIdentifier: ElementRef;
+  
+  Constructor() { }
   
   title = 'resize-project';
   width: number;
   height: number;
+  mio : number;
  
   onResized(event) {
     this.width = event.newWidth;
@@ -23,11 +32,11 @@ export class AppComponent  {
   }
 
   onResize(event) {
+    const self = this;
    console.log(event.target.innerWidth);
    console.log(event.target.innerHeight);
    this.height = event.target.innerHeight;
-
-
+   console.log(this.myIdentifier.nativeElement.height());
   }
 
 }
