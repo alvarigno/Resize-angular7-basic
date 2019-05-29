@@ -10,6 +10,7 @@ import { ResizedEvent } from 'angular-resize-event';
 export class AppComponent  {
 
 
+  
   title = 'resize-project';
   width: number;
   height: number;
