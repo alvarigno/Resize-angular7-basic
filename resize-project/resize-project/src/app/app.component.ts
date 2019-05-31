@@ -33,10 +33,9 @@ export class AppComponent {
 
   onResize(event) {
     const self = this;
-   console.log(event.target.innerWidth);
-   console.log(event.target.innerHeight);
+   console.log('ancho: '+event.target.innerWidth);
+   console.log('alto: '+event.target.innerHeight);
    this.height = event.target.innerHeight;
-   console.log(this.myIdentifier.nativeElement.height());
   }
 
 }
