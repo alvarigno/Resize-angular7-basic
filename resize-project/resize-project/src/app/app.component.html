@@ -1,6 +1,7 @@
 <div (resized)="onResized($event)">hola</div>
 <div (window:resize)="onResize($event)">hola</div>
 
+
 <iframe src="https://www.bbc.com/" #iframeAutoHeight (window:resize)="onResize($event)"></iframe>
 <router-outlet></router-outlet>
 
